@@ -78,7 +78,7 @@ public class Clase
     @Override
     public String toString()
     {
-        return "Nombre: " + nombre + "; Seccion: " + seccion + "; Edificio: " + edificio + "; Salon: " + salon + "; Tiene aire?: " + aire;
+        return nombre + "; " + seccion + "; " + edificio + "; " + salon + "; " + aire;
     }
     
     
