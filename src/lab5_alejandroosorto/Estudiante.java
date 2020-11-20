@@ -7,14 +7,14 @@ package lab5_alejandroosorto;
 public class Estudiante extends Personas
 {
     private int numCuenta;
-    private Carrera carrera;
+    private String carrera;
 
     public Estudiante()
     {
         super();
     }
 
-    public Estudiante(int numCuenta, Carrera carrera, String nombre, String apellido, int edad, char sexo)
+    public Estudiante(int numCuenta, String carrera, String nombre, String apellido, int edad, char sexo)
     {
         super(nombre, apellido, edad, sexo);
         this.numCuenta = numCuenta;
@@ -31,14 +31,20 @@ public class Estudiante extends Personas
         this.numCuenta = numCuenta;
     }
 
-    public Carrera getCarrera()
+    public String getCarrera()
     {
         return carrera;
     }
 
-    public void setCarrera(Carrera carrera)
+    public void setCarrera(String carrera)
     {
         this.carrera = carrera;
+    }
+
+    @Override
+    public String toString()
+    {
+        return super.toString();
     }
     
     

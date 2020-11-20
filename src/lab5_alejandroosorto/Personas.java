@@ -66,7 +66,7 @@ public class Personas
     @Override
     public String toString()
     {
-        return "Nombre: " + nombre + "; Apellido: " + apellido + "; Edad: " + edad + "; Sexo: " + sexo;
+        return nombre + " " + apellido + "; " + edad + "; " + sexo;
     }
     
     
