@@ -70,6 +70,7 @@ public class Principal extends javax.swing.JFrame
         BG_SexoEstudiantes = new javax.swing.ButtonGroup();
         subMenu = new javax.swing.JPopupMenu();
         AgregarArbol = new javax.swing.JMenuItem();
+        jLabel6 = new javax.swing.JLabel();
         PPrincipal = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         L_Facultad = new javax.swing.JLabel();
@@ -97,6 +98,12 @@ public class Principal extends javax.swing.JFrame
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        L_Edad1 = new javax.swing.JLabel();
+        SP_Edad1 = new javax.swing.JSpinner();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         LI_Estudiantes = new javax.swing.JList<>();
@@ -113,6 +120,8 @@ public class Principal extends javax.swing.JFrame
             }
         });
         subMenu.add(AgregarArbol);
+
+        jLabel6.setText("jLabel6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -243,7 +252,6 @@ public class Principal extends javax.swing.JFrame
 
         BG_SexoEstudiantes.add(Btn_M);
         Btn_M.setForeground(new java.awt.Color(0, 0, 0));
-        Btn_M.setSelected(true);
         Btn_M.setText("M");
 
         BG_SexoEstudiantes.add(Btn_F);
@@ -352,15 +360,58 @@ public class Principal extends javax.swing.JFrame
 
         jPanel2.setBackground(new java.awt.Color(117, 196, 170));
 
+        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Nombre: ");
+
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Apellido: ");
+
+        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
+
+        L_Edad1.setForeground(new java.awt.Color(0, 0, 0));
+        L_Edad1.setText("Edad: ");
+
+        SP_Edad1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 552, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(L_Edad1))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SP_Edad1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(393, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_Edad1)
+                    .addComponent(SP_Edad1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(222, Short.MAX_VALUE))
         );
 
         PPrincipal.addTab("Maestros", jPanel2);
@@ -680,15 +731,20 @@ public class Principal extends javax.swing.JFrame
     private javax.swing.JLabel L_Carrera;
     private javax.swing.JLabel L_CarreraEstudiantes;
     private javax.swing.JLabel L_Edad;
+    private javax.swing.JLabel L_Edad1;
     private javax.swing.JLabel L_Facultad;
     private javax.swing.JLabel L_Jefe;
     private javax.swing.JLabel L_Nombre;
     private javax.swing.JTabbedPane PPrincipal;
     private javax.swing.JSpinner SP_Edad;
+    private javax.swing.JSpinner SP_Edad1;
     private javax.swing.JTree T_Estudiantes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -697,6 +753,8 @@ public class Principal extends javax.swing.JFrame
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JPopupMenu subMenu;
     // End of variables declaration//GEN-END:variables
 }
