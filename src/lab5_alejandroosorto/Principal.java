@@ -20,6 +20,8 @@ public class Principal extends javax.swing.JFrame
     ArrayList Estudiantes = new ArrayList();
     int numActual = 000001;
     
+    DefaultMutableTreeNode nodoSeleccionado;
+    Estudiante estudianteSeleccionado;
     
     public Principal()
     {
@@ -71,6 +73,9 @@ public class Principal extends javax.swing.JFrame
         subMenu = new javax.swing.JPopupMenu();
         AgregarArbol = new javax.swing.JMenuItem();
         jLabel6 = new javax.swing.JLabel();
+        BG_SexoMaestros = new javax.swing.ButtonGroup();
+        subMenuArbol = new javax.swing.JPopupMenu();
+        Modificar = new javax.swing.JMenuItem();
         PPrincipal = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         L_Facultad = new javax.swing.JLabel();
@@ -98,12 +103,17 @@ public class Principal extends javax.swing.JFrame
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
+        CT_NombreMA = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        CT_ApellidoMA = new javax.swing.JTextField();
         L_Edad1 = new javax.swing.JLabel();
-        SP_Edad1 = new javax.swing.JSpinner();
+        SP_EdadMA = new javax.swing.JSpinner();
+        jLabel8 = new javax.swing.JLabel();
+        CT_Salario = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        Btn_MMA = new javax.swing.JRadioButton();
+        Btn_FMA = new javax.swing.JRadioButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         LI_Estudiantes = new javax.swing.JList<>();
@@ -122,6 +132,9 @@ public class Principal extends javax.swing.JFrame
         subMenu.add(AgregarArbol);
 
         jLabel6.setText("jLabel6");
+
+        Modificar.setText("Modificar");
+        subMenuArbol.add(Modificar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -360,7 +373,7 @@ public class Principal extends javax.swing.JFrame
 
         jPanel2.setBackground(new java.awt.Color(117, 196, 170));
 
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
+        CT_NombreMA.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Nombre: ");
@@ -368,12 +381,29 @@ public class Principal extends javax.swing.JFrame
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Apellido: ");
 
-        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
+        CT_ApellidoMA.setForeground(new java.awt.Color(0, 0, 0));
 
         L_Edad1.setForeground(new java.awt.Color(0, 0, 0));
         L_Edad1.setText("Edad: ");
 
-        SP_Edad1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
+        SP_EdadMA.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
+
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Salario: ");
+
+        CT_Salario.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("Sexo:");
+
+        BG_SexoMaestros.add(Btn_MMA);
+        Btn_MMA.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_MMA.setSelected(true);
+        Btn_MMA.setText("M");
+
+        BG_SexoMaestros.add(Btn_FMA);
+        Btn_FMA.setForeground(new java.awt.Color(0, 0, 0));
+        Btn_FMA.setText("F");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -385,15 +415,22 @@ public class Principal extends javax.swing.JFrame
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(CT_NombreMA, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
-                            .addComponent(L_Edad1))
+                            .addComponent(L_Edad1)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SP_Edad1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(Btn_MMA)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Btn_FMA))
+                            .addComponent(CT_Salario, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SP_EdadMA, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CT_ApellidoMA, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(393, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -402,16 +439,25 @@ public class Principal extends javax.swing.JFrame
                 .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CT_NombreMA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CT_ApellidoMA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(L_Edad1)
-                    .addComponent(SP_Edad1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(222, Short.MAX_VALUE))
+                    .addComponent(SP_EdadMA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(CT_Salario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(Btn_MMA)
+                    .addComponent(Btn_FMA))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
 
         PPrincipal.addTab("Maestros", jPanel2);
@@ -664,6 +710,12 @@ public class Principal extends javax.swing.JFrame
             int r = T_Estudiantes.getClosestRowForLocation(evt.getX(), evt.getY());
             T_Estudiantes.setSelectionRow(r);
             Object v = T_Estudiantes.getSelectionPath().getLastPathComponent();
+            nodoSeleccionado = (DefaultMutableTreeNode) v;
+            if (nodoSeleccionado.getUserObject() instanceof Estudiante)
+            {
+                estudianteSeleccionado = (Estudiante) nodoSeleccionado.getUserObject();
+                subMenuArbol.show(evt.getComponent(), evt.getX(), evt.getY());
+            }
         }
     }//GEN-LAST:event_T_EstudiantesMouseClicked
 
@@ -715,17 +767,23 @@ public class Principal extends javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AgregarArbol;
     private javax.swing.ButtonGroup BG_SexoEstudiantes;
+    private javax.swing.ButtonGroup BG_SexoMaestros;
     private javax.swing.JButton Btn_AggCarr;
     private javax.swing.JButton Btn_AggEstu;
     private javax.swing.JRadioButton Btn_F;
+    private javax.swing.JRadioButton Btn_FMA;
     private javax.swing.JRadioButton Btn_M;
+    private javax.swing.JRadioButton Btn_MMA;
     private javax.swing.JComboBox<String> CB_CarreraEstudiantes;
     private javax.swing.JComboBox<String> CB_Carreras;
     private javax.swing.JComboBox<String> CB_Facultades;
     private javax.swing.JTextField CT_Apellido;
+    private javax.swing.JTextField CT_ApellidoMA;
     private javax.swing.JTextField CT_JefeCarrera;
     private javax.swing.JTextField CT_Nombre;
+    private javax.swing.JTextField CT_NombreMA;
     private javax.swing.JTextField CT_Precio;
+    private javax.swing.JTextField CT_Salario;
     private javax.swing.JList<String> LI_Estudiantes;
     private javax.swing.JLabel L_Apellido;
     private javax.swing.JLabel L_Carrera;
@@ -735,16 +793,19 @@ public class Principal extends javax.swing.JFrame
     private javax.swing.JLabel L_Facultad;
     private javax.swing.JLabel L_Jefe;
     private javax.swing.JLabel L_Nombre;
+    private javax.swing.JMenuItem Modificar;
     private javax.swing.JTabbedPane PPrincipal;
     private javax.swing.JSpinner SP_Edad;
-    private javax.swing.JSpinner SP_Edad1;
+    private javax.swing.JSpinner SP_EdadMA;
     private javax.swing.JTree T_Estudiantes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -753,8 +814,9 @@ public class Principal extends javax.swing.JFrame
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JPopupMenu subMenu;
+    private javax.swing.JPopupMenu subMenuArbol;
     // End of variables declaration//GEN-END:variables
+
+    
 }
