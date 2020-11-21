@@ -662,7 +662,7 @@ public class Principal extends javax.swing.JFrame
             DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) m.getRoot();
 
             DefaultMutableTreeNode nodoCarrera;
-            nodoCarrera = new DefaultMutableTreeNode(Carreras.get(LI_Estudiantes.getSelectedIndex()));
+            nodoCarrera = new DefaultMutableTreeNode();
             
             DefaultMutableTreeNode nodoEstudiante;
             nodoEstudiante = new DefaultMutableTreeNode(Estudiantes.get(LI_Estudiantes.getSelectedIndex()));
